@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+
+<script type="text/javascript" th:src="@{webjars/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#btn").th:onClick(function(){
+			//post请求：第一是：url；第二个：参数，可以省略；第三个：回调函数；
+			//第四个：返回类型，设置为json它的返回值才能转换为json数据
+			$.post(
+				"jsonTest",
+				function(data){
+					alert(data);
+					debugger;
+					var html ="";
+					for(var i=0;i<data.length;i++){
+						
+						html+="<tr><td>"+data[i].name+"</td><td>"+data[i].age+"</td><td>"+data[i].num+"</td></tr>";
+					}
+					//alert(html);
+					$("#tb").html(html);
+				},
+				"json"
+			);
+		});
+	});
+</script>
+</head>
+<body>
+	<center>
+		<button id="btn">查询</button>
+		<table width="40%">
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tbody id="tb">
+			</tbody>
+		</table>
+	</center>
+</body>
+</html>
