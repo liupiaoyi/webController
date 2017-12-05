@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<center>
+<table border="1">
+	
+    <tr>  
+      <th>num</th>  
+      <th>name</th>  
+      <th>age</th>  
+      <th>sex</th>   
+      
+      <th> <a href="toAdd">新增</a> </th>
+    </tr>  
+
+ 	<tr th:each="person: ${list}">
+		<td th:text="${person.num }"></td>
+		<td th:text="${person.name }"></td>
+		<td th:text="${person.age }"></td>
+		<td th:text="${person.sex }"></td>
+		
+		<td> <a href="">编辑</a> </td>
+	</tr>
+</table>
+</center>
+
+</body>
+</html>

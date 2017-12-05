@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+<script type="text/javascript" th:src="@{/webjars/jquery/1.11.1/jquery.min.js}"></script>
+</head>
+<body>
+
+<center>
+
+<!-- <a th:text="${key }">${key }</a>
+
+<a th:text="${keurqe }"></a>
+<br />
+<a th:text="#{name }"></a> -->
+
+
+<table border="1">
+	
+    <tr>  
+      <th>pid</th>
+      <th>name</th>  
+      <th>age</th>  
+      
+      <th> <a th:href="@{/toAdd}">新增</a> </th>
+    </tr>  
+
+ 	<tr th:each="person: ${list}">
+ 	<td th:text="${person.pid}"></td>
+		<td th:text="${person.name}"></td>
+		<td th:text="${person.age}"></td>
+		
+		<td> <a th:href="@{/toupdate(name=${person.name},age=${person.age},pid=${person.pid})}">编辑</a> </td>
+	</tr>
+</table>
+	
+	
+<!-- <table>	 
+                  <tr>  
+                    <th>用户名</th>  
+                    <th>邮箱</th>  
+                    <th>状态变量：index</th>  
+                    <th>状态变量：count</th>  
+                    <th>状态变量：size</th>  
+                    <th>状态变量：current.personName</th>  
+                    <th>状态变量：even</th>  
+                    <th>状态变量：odd</th>  
+                    <th>状态变量：first</th>  
+                    <th>状态变量：last</th>  
+                  </tr>  
+                  <tr  th:each="person,personStat : ${list}">  
+                  
+                    <td th:text="${person.name}">Onions</td>  
+                    <td th:text="${person.num}">test.com.cn</td>  
+                    
+                    
+                    <th th:text="${personStat.index}">状态变量：index</th>  
+                    <th th:text="${personStat.count}">状态变量：count</th>  
+                    <th th:text="${personStat.size}">状态变量：size</th>  
+                    <th th:text="${personStat.current.name}">状态变量：current</th>  
+                    <th th:text="${personStat.even}">状态变量：even****</th>  
+                    <th th:text="${personStat.odd}">状态变量：odd</th>  
+                    <th th:text="${personStat.first}">状态变量：first</th>  
+                    <th th:text="${personStat.last}">状态变量：last</th>  
+                  </tr>  
+</table> -->
+
+</center>
+
+</body>
+</html>
